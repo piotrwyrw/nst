@@ -1,4 +1,4 @@
-package dev.vanadium.speedtest;
+package dev.vanadium.nst;
 
 import java.io.File;
 import java.io.IOException;

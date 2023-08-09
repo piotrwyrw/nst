@@ -12,6 +12,7 @@ averagesUp = []
 averagesPing = []
 pings = []
 
+# Sweep from 0 to 20KHz
 try:
     results = open('speed_results.json')
 except FileNotFoundError:
@@ -34,7 +35,6 @@ for entry in resultsArr:
 
     sumCount += 1
 
-    # +2 Hours --> CEST
     xpoints.append(dt.datetime.utcfromtimestamp(entry['unix']) + dt.timedelta(hours=2))
 
     upValues.append(entry['up'])
@@ -48,7 +48,6 @@ for entry in resultsArr:
     downValues.append(entry['down'])
     sumDown = sumDown + entry['down']
     averagesDown.append(sumDown / sumCount)
-
 
 avgUp = sumUp / sumCount
 avgDown = sumDown / sumCount
@@ -93,10 +92,8 @@ def plot():
 
 
 def saveAndShow(fname):
-
     for ax in axs:
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%H:%M"))
-
     axs[0].legend()
     axs[1].legend()
     axs[2].legend()

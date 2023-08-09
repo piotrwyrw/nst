@@ -1,4 +1,4 @@
-package dev.vanadium.speedtest;
+package dev.vanadium.nst;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

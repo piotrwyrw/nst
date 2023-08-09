@@ -1,4 +1,4 @@
-package dev.vanadium.speedtest;
+package dev.vanadium.nst;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
