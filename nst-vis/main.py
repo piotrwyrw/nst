@@ -106,14 +106,14 @@ points_pings = np.array(pings)
 labelUp = 'Upload'
 labelDown = 'Download'
 labelPing = 'Ping'
-labelUpAvg = 'Upload Avg. ({} Mb/s) $\leq$ {}'.format(round(avgUp, 1), np.max(points_averagesUp))
-labelDownAvg = 'Download Avg. ({} Mb/s) $\leq$ {}'.format(round(avgDown, 1), np.max(points_averagesDown))
-labelPingAvg = 'Ping Avg. ({} ms)'.format(round(avgPing))
+labelUpAvg = 'Upload Avg. ({} Mb/s) $\leq$ {}'.format(round(avgUp, 1), round(max(points_averagesUp)))
+labelDownAvg = 'Download Avg. ({} Mb/s) $\leq$ {}'.format(round(avgDown, 1), round(max(points_averagesDown)))
+labelPingAvg = 'Ping Avg. ({} ms) $\geq$ {}'.format(round(avgPing), round(min(points_averagesPing)))
 
 fig, axs = plt.subplots(3)
 
-fig.set_size_inches(10, 7)
-fig.suptitle('NST v3.2, {} Samples'.format(points_x.size))
+fig.set_size_inches(10, 6)
+fig.suptitle('Internet speed fluctuation over time'.format(points_x.size))
 
 
 def scatter():
